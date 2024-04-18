@@ -159,8 +159,9 @@ vim.opt.scrolloff = 10
 --  See `:help vim.keymap.set()`
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('i', '<M-BS>', '<C-W>', { noremap = true, desc = 'Delete word backwards' })
+vim.keymap.set({ 'i', 'c' }, '<M-BS>', '<C-W>', { noremap = true, desc = 'Delete word backwards' })
 vim.keymap.set('i', '<S-Tab>', '<C-d>', { noremap = true, desc = 'De-indent' })
+vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, desc = 'Yank to clipboard' })
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -718,7 +719,8 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          -- ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
