@@ -4,7 +4,7 @@ return {
   config = true,
   keys = {
     {
-      '<C-`>',
+      '<C-/>',
       '<cmd>ToggleTerm<cr>',
       mode = { 'n', 't' },
       desc = 'ToggleTerm',
