@@ -1,7 +1,13 @@
-return { 'akinsho/toggleterm.nvim', version = '*', config = true, keys = {
-  {
-    '<c-`>',
-    '<cmd>ToggleTerm<cr>',
-    desc = 'ToggleTerm',
+return {
+  'akinsho/toggleterm.nvim',
+  version = '*',
+  config = true,
+  keys = {
+    {
+      '<C-`>',
+      '<cmd>ToggleTerm<cr>',
+      mode = { 'n', 't' },
+      desc = 'ToggleTerm',
+    },
   },
-} }
+}
