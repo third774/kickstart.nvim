@@ -1,3 +1,4 @@
+--
 --[[
 
 =====================================================================
@@ -693,11 +694,14 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'onsails/lspkind.nvim',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
+
       luasnip.config.setup {}
 
       cmp.setup {
@@ -759,6 +763,13 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+        },
+        -- configure lspkind for vs-code like pictograms in completion menu
+        formatting = {
+          format = lspkind.cmp_format {
+            maxwidth = 50,
+            ellipsis_char = '...',
+          },
         },
       }
     end,
